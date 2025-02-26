@@ -11,14 +11,13 @@ class Recipe:
         self.name = name
         self.ingredients = ingredients  # List of ingredients
         self.instructions = instructions  # List of preparation steps
-        self._index = 0  # For iteration
 
     def __iter__(self):
+        self._index = 0 # For iteration
         return self
 
     def __next__(self):
         if self._index >= len(self.ingredients):
-            self._index = 0
             raise StopIteration
         value = self.ingredients[self._index]
         self._index += 1
@@ -26,17 +25,16 @@ class Recipe:
 
     def __getitem__(self, index):
         try:
-            self.ingredients[index]
+            return self.ingredients[index]
         except Exception as e:
             logging.error(f"Index out of range, error={e}")
             return None
-        return self.ingredients[index]
 
     def __str__(self):
         """Return a string representation of the recipe."""
         ingredients_list = "\n".join(f"- {ing}" for ing in self.ingredients)
         instructions_list = "\n".join(f"{i+1}. {step}" for i, step in enumerate(self.instructions))
-        return f"📌 Recipe: {self.name}\n\n🛒 Ingredients:\n{ingredients_list}\n\n👨‍🍳 Instructions:\n{instructions_list}"
+        return f"Recipe: {self.name}\n\nIngredients:\n{ingredients_list}\n\nInstructions:\n{instructions_list}"
 
 
 

@@ -48,16 +48,16 @@ def main():
     print(recipe3)
 
     # Using iterator to loop through ingredients
-    print("\n🛒 Ingredients in Pancakes Recipe:")
+    print("\nIngredients in Pancakes Recipe:")
     for ingredient in recipe1:
         print(ingredient)
 
     # Using index to access a specific ingredient
-    print("\n🔎 First ingredient in Pancakes:", recipe1[0])
-    print("🔎 Third ingredient in Greek Salad:", recipe3[2])
+    print("\nFirst ingredient in Pancakes:", recipe1[0])
+    print("Third ingredient in Greek Salad:", recipe3[2])
 
     # login error
-    print("🔎 Third ingredient in Greek Salad:", recipe3[6])
+    print("Third ingredient in Greek Salad:", recipe3[6])
 
 
 if __name__ == "__main__":
